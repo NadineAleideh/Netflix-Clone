@@ -11,7 +11,7 @@ function ModalMovie(props) {
 
   const addToFav = (item) => {
     
-    const serverURL = `http://localhost:3001/addToFav`;
+    const serverURL = `${process.env.REACT_APP_serverURL}/addToFav`;
     let obj ={... props.item, comment:comment}
     axios.post(serverURL, obj)
       .then(response => {
